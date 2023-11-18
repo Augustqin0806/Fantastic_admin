@@ -1,3 +1,11 @@
+/*
+ * @Author: Augustqin0806 augustqin0806@gmail.com
+ * @Date: 2023-11-10 02:49:24
+ * @LastEditors: Augustqin0806 augustqin0806@gmail.com
+ * @LastEditTime: 2023-11-18 17:16:30
+ * @FilePath: \Fantastic_admin\src\router\routes.ts
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ */
 import { setupLayouts } from 'virtual:meta-layouts'
 import generatedRoutes from 'virtual:generated-pages'
 import type { RouteRecordRaw } from 'vue-router'
@@ -61,8 +69,17 @@ const systemRoutes: RouteRecordRaw[] = [
 // 动态路由（异步路由、导航栏路由）
 const asyncRoutes: Route.recordMainRaw[] = [
   {
-    meta: {
+    meta: { // todo 主导航
       title: '演示',
+      icon: 'uim:box',
+    },
+    children: [
+      MultilevelMenuExample,
+    ],
+  },
+  {
+    meta: {
+      title: '其它',
       icon: 'uim:box',
     },
     children: [
